@@ -12,3 +12,28 @@
 // 8741 => [8 7 4 1]
 // 4 => [4]
 
+System.Console.WriteLine("Введите число от 1 до 100 000: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int currNumber = number;
+int count = 0;
+
+while (number > 0)
+{
+    count++;
+    number = number / 10;
+}
+
+int[] array = new int[count];
+
+for (int i = 0; i < array.Length; i++)
+{
+    int digit = currNumber % 10;
+    array[array.Length - 1 - i] = digit;
+    currNumber = currNumber / 10;
+}
+
+for (int i = 0; i < array.Length; i++)
+    System.Console.Write(array[i] + " ");
+
+// 65841
+// 6 5 8 4 1 
