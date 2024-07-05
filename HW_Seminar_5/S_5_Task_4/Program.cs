@@ -16,11 +16,19 @@ void Main()
     int rowCount = ReadInt("Введите количество строк двумерного массива: ");
     int colCount = ReadInt("Введите количество столбцов двумерного массива: ");
 
-    int[,] matrix = GenerateMatrix(rowCount, colCount, 0, 9);
-    PrintMatrix(matrix);
-    string resultData = deleteMinRowColumn(matrix);
-    int[,] changedMatrix = CreateResultMatrix(resultData, rowCount - 1, colCount - 1);
-    PrintMatrix(changedMatrix);
+    if (rowCount <= 1 || colCount <= 1)
+    {
+        System.Console.WriteLine("Введено количество строк или столбцов меньше 1!");
+        // Main();
+    }
+    else
+    {
+        int[,] matrix = GenerateMatrix(rowCount, colCount, 0, 9);
+        PrintMatrix(matrix);
+        string resultData = deleteMinRowColumn(matrix);
+        int[,] changedMatrix = CreateResultMatrix(resultData, rowCount - 1, colCount - 1);
+        PrintMatrix(changedMatrix);
+    }
 }
 
 // создаем новую матрицу и заполняем из результирующей строки
@@ -45,6 +53,7 @@ int[,] CreateResultMatrix(string data, int rows, int cols)
 }
 
 // собираем нужные элементы матрицы (без элементов лишнего столбца и строки) в одну переменную типа string
+// можно было в массив (array) длиной rows-1 * colimns-1
 string deleteMinRowColumn(int[,] matrix)
 {
     int numRows = matrix.GetLength(0);
