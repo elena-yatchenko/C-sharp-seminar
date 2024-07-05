@@ -52,6 +52,14 @@ int[,] CreateResultMatrix(string data, int rows, int cols)
     return newMatrix;
 }
 
+// можно было в методе CreateResultMatrix использовать следующий принцип: 
+// string text = "(1,2) (2,3) (4,5) (6,7)";
+// var data = text.Split(" ").ToArray();
+// for (int=0; i < data.Length; i++)
+// {
+//     System.Console.WriteLine(data[i]);
+// }
+
 // собираем нужные элементы матрицы (без элементов лишнего столбца и строки) в одну переменную типа string
 // можно было в массив (array) длиной rows-1 * colimns-1
 string deleteMinRowColumn(int[,] matrix)
