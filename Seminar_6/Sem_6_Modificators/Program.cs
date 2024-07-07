@@ -80,8 +80,12 @@ int[,] DeleteRowAndCol(int[,] matrix, int delRow, int delCol)
 {
     int[,] newMatrix = new int[matrix.GetLength(0) - 1, matrix.GetLength(1) - 1];
 
+    // int x = 0;
+    // for (int i = 0; i < matrix.GetLength(0); i++)
     for (int i = 0, x = 0; i < matrix.GetLength(0); i++)
     {
+        // int y = 0;
+        // for (int j = 0; j < matrix.GetLength(1); j++)
         if (i == delRow) continue;
         for (int j = 0, y = 0; j < matrix.GetLength(1); j++)
         {
