@@ -12,6 +12,8 @@ void Main()
     // PrintByCycle(myArray);
     // System.Console.WriteLine();
     PrintByRecursion(myArray);
+    System.Console.WriteLine();
+    PrintByRecursionReverse(myArray);
 
 }
 void PrintByCycle(int[] array)
@@ -20,6 +22,7 @@ void PrintByCycle(int[] array)
     {
         System.Console.Write(array[i] + " ");
     }
+    System.Console.WriteLine();
 }
 
 void PrintByRecursion(int[] array)
@@ -27,6 +30,13 @@ void PrintByRecursion(int[] array)
     if (array.Length < 1) return;
     System.Console.Write(array[0] + " ");
     PrintByRecursion(array[1..]);
+}
+
+void PrintByRecursionReverse(int[] array)
+{
+    if (array.Length < 1) return;
+    PrintByRecursionReverse(array[1..]);
+    System.Console.Write(array[0] + " ");
 }
 
 int[] GenerateArray(int size)
